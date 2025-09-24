@@ -1,0 +1,13 @@
+<nav>
+    <a routerLink="/">Home </a>
+    <a routerLink="/contact">About </a>
+    @if (session.getItem('UserId')) {
+        <a [routerLink]="'/profile/' + session.getItem('UserId')">Profile </a>
+    }
+    @else {
+        <a routerLink="/login">Login </a>
+        <a routerLink="/register">Register </a>
+    }
+
+   
+</nav>
