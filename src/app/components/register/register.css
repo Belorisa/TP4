@@ -1,0 +1,27 @@
+fieldset {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  padding: 15px;
+}
+
+legend {
+  font-size: 1.2em;
+  color: #333;
+  font-weight: bold;
+}
+
+label {
+  display: block;
+  margin: 10px 0 5px;
+  color: #555;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+}

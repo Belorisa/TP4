@@ -1,5 +1,3 @@
-<p>register works!</p>
-
 <fieldset>
     <legend>
         Login</legend>
@@ -15,6 +13,7 @@
         Confirmer le mot de passe :
         <input #passwordConfirm type="text" />
     </label>
-    <button (click)="registerUser(mail.value,password.value,passwordConfirm.value)" class="mt-4 px-4 py-2 bg-blue-500 text-white rounded">
+    <button (click)="registerUser(mail.value,password.value,passwordConfirm.value)"
+        class="mt-4 px-4 py-2 bg-blue-500 text-white rounded">
         Connexion</button>
 </fieldset>

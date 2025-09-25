@@ -18,12 +18,8 @@ export class Users {
     { id: 2, mail: 'test2@test2.fr', password: 'test2' }
   ]);
 
-    initialId = 2
-
-
-    private router : Router = inject(Router);
-
-  
+  initialId = 2
+  private router: Router = inject(Router);
 
   isCorrectUser = computed(() => {
     const storedUser = localStorage.getItem('User');
@@ -39,14 +35,16 @@ export class Users {
   });
 
   logUser(mail: string, password: string) {
-      localStorage.setItem('User', JSON.stringify({ mail, password }));
-      if(this.isCorrectUser()) {
-        alert("Login successful!");
-      }
-      else
-      {
-        alert("Login failed. Please check your credentials.");
-      }
+    localStorage.setItem('User', JSON.stringify({ mail, password }));
+    if (this.isCorrectUser()) {
+      alert("Login successful!");
+      this.router.navigate(['/profil/' + sessionStorage.getItem('UserId')]);
+      localStorage.clear()
+    }
+    else {
+      alert("Login failed. Please check your credentials.");
+      localStorage.clear()
+    }
   }
 
   getUser(id: string | null) {
@@ -60,7 +58,7 @@ export class Users {
   }
 
   registerUser(mail: string, password: string) {
-    if(mail == "" || password == "") {
+    if (mail == "" || password == "") {
       alert("Mail or password cannot be empty.");
       return;
     }
