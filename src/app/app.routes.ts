@@ -12,6 +12,7 @@ export const routes: Routes = [
     { path: 'contact', component: Contact },
     { path: 'login', component: Login },
     { path: 'register', component: Register },
+    { path: 'heroes',  loadChildren: () => import('./components/heros/heros.route').then(m => m.HEROES_ROUTES) },
     { path: 'profil', canActivate: [profilsGuard], loadChildren: () => import('./components/profil/profil.route').then(m => m.PROFIL_ROUTES) },
     { path: '**', component: NotFound }
 ];

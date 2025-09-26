@@ -1,0 +1,16 @@
+<nav>
+
+    <ul>
+
+        @defer (on timer(2000ms)) {
+        @for (hero of heroes; track hero.id) {
+        <li><a routerLink="/heroes/{{hero.id}}">Hero : {{hero.name}}</a></li>
+        }@empty {
+        <li>Aucun Hero</li>
+        }
+        }
+        @placeholder {
+        <li>Loading....</li>
+        }
+    </ul>
+</nav>
